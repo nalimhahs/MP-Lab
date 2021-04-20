@@ -2,7 +2,7 @@
 .STACK 100H
 .DATA
 
-STRING DB 'abbaacjakhnlaiio', '$'
+STRING DB 'milan', '$'
 VOW DW 0
 
 .CODE

@@ -1,0 +1,47 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+LIST DW 2H, 6H, 5H, 8H
+COUNT EQU 04
+
+.CODE
+
+MOV AX, @DATA                   
+MOV DS, AX
+
+MOV DX, COUNT-1
+
+OUTER:
+	MOV CX, DX
+    MOV SI, OFFSET LIST
+
+	INNER:
+		MOV AX,[SI]
+		CMP AX,[SI+2]
+		JL UPDATE				;Update here for decreasing order
+		XCHG [SI+2], AX
+		XCHG [SI], AX
+
+		UPDATE:  
+			ADD SI, 02
+			LOOP INNER
+	DEC DX
+	JNZ OUTER
+
+MOV DI, OFFSET LIST				;Updating registers for printing
+MOV CX, COUNT
+
+PRINT:    
+	MOV AX, [DI]
+	ADD AX, 03030H
+	MOV DX, AX
+	MOV AH, 02H
+	INT 21H
+	ADD DI, 02
+	LOOP PRINT
+
+MOV AH,4CH
+INT 21H
+
+END

@@ -2,7 +2,7 @@
 .STACK 100H
 .DATA
 
-STRING DB 'abbaa', '$'
+STRING DB 'milim', '$'
 ISPAL DB 'String is palindrome', '$'
 NOTPAL DB 'String is not palindrome', '$'
 
