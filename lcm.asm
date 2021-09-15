@@ -39,8 +39,8 @@ endm
 .DATA
     d1 dw 16 
     d2 dw 24
-    msg1 db 10,13,'The LCM = $'
-    msg2 db 10,13,'The GCF = $'
+    msg1 db 10,13,'The GCF = $'
+    msg2 db 10,13,'The LCM = $'
     lcm dw 0
     gcf dw 0
 

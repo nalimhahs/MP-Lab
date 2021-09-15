@@ -49,7 +49,7 @@ endm
 .MODEL SMALL
 .STACK 100H
 .DATA
-    array dw 1111, 1111, 1111
+    array dw 2999, 2999, 2999
     count dw 3
     msg1 db 10,13,'SUM = $'
     sum dw 0
